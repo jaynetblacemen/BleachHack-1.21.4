@@ -271,7 +271,7 @@ public class WorldUtils {
 		mc.player.networkHandler.sendPacket(
 				new PlayerMoveC2SPacket.LookAndOnGround(
 						mc.player.getYaw() + MathHelper.wrapDegrees(rot[0] - mc.player.getYaw()),
-						mc.player.getPitch() + MathHelper.wrapDegrees(rot[1] - mc.player.getPitch()), mc.player.isOnGround()));
+						mc.player.getPitch() + MathHelper.wrapDegrees(rot[1] - mc.player.getPitch()), mc.player.isOnGround(), false));
 	}
 	
 	public static float[] getViewingRotation(Entity entity, double x, double y, double z) {

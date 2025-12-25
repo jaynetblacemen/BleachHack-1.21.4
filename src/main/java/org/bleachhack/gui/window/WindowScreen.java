@@ -238,8 +238,8 @@ public abstract class WindowScreen extends Screen {
 		return super.charTyped(chr, modifiers);
 	}
 
-	@Override
 	public void renderBackgroundTexture(DrawContext drawContext) {
+		/*
 		int colorOffset = (int) ((System.currentTimeMillis() / 75) % 100);
 		if (colorOffset > 50)
 			colorOffset = 50 - (colorOffset - 50);
@@ -258,8 +258,9 @@ public abstract class WindowScreen extends Screen {
 		bufferBuilder.vertex(0, 0, 0).color(30 + colorOffset / 3, 20, 80, 255).next();
 		bufferBuilder.vertex(0, height + 16, 0).color(90, 54, 159, 255).next();
 		bufferBuilder.vertex(width, height + 16, 0).color(105 + colorOffset, 54, 189, 255).next();
-		tessellator.draw();
+		// tessellator.draw();
 
 		RenderSystem.disableBlend();
+		*/
 	}
 }

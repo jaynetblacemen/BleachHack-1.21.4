@@ -192,8 +192,10 @@ public abstract class SettingList<T> extends ModuleSetting<LinkedHashSet<T>> {
 					int curY = y1 + inputField.y1 - 4 - toDraw.size() * 17;
 					int longest = toDraw.stream().mapToInt(e -> textRenderer.getWidth(getName(e))).max().orElse(0);
 
+					/*
 					RenderSystem.getModelViewStack().push();
 					RenderSystem.getModelViewStack().translate(0, 0, 150);
+					*/
 
 					drawContext.getMatrices().push();
 					drawContext.getMatrices().translate(0, 0, 150);
@@ -204,8 +206,10 @@ public abstract class SettingList<T> extends ModuleSetting<LinkedHashSet<T>> {
 					}
 
 					drawContext.getMatrices().pop();
+					/*
 					RenderSystem.getModelViewStack().pop();
 					RenderSystem.applyModelViewMatrix();
+					*/
 				}
 			}
 		}

@@ -194,6 +194,7 @@ public class Window {
 	}
 
 	public static void horizontalGradient(int x1, int y1, int x2, int y2, int color1, int color2) {
+		/*
 		float alpha1 = (color1 >> 24 & 255) / 255.0F;
 		float red1   = (color1 >> 16 & 255) / 255.0F;
 		float green1 = (color1 >> 8 & 255) / 255.0F;
@@ -212,11 +213,13 @@ public class Window {
 		bufferBuilder.vertex(x1, y2, 0).color(red1, green1, blue1, alpha1).next();
 		bufferBuilder.vertex(x2, y2, 0).color(red2, green2, blue2, alpha2).next();
 		bufferBuilder.vertex(x2, y1, 0).color(red2, green2, blue2, alpha2).next();
-		tessellator.draw();
+		// tessellator.draw();
 		RenderSystem.disableBlend();
+		*/
 	}
 
 	public static void verticalGradient(DrawContext context, int x1, int y1, int x2, int y2, int color1, int color2) {
+		/*
 		float alpha1 = (color1 >> 24 & 255) / 255.0F;
 		float red1   = (color1 >> 16 & 255) / 255.0F;
 		float green1 = (color1 >> 8 & 255) / 255.0F;
@@ -235,7 +238,8 @@ public class Window {
 		bufferBuilder.vertex(x1, y1, 0).color(red1, green1, blue1, alpha1).next();
 		bufferBuilder.vertex(x1, y2, 0).color(red2, green2, blue2, alpha2).next();
 		bufferBuilder.vertex(x2, y2, 0).color(red2, green2, blue2, alpha2).next();
-		tessellator.draw();
+		// tessellator.draw();
 		RenderSystem.disableBlend();
+		*/
 	}
 }

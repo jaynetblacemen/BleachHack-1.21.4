@@ -166,14 +166,14 @@ public class EntityMenuEditScreen extends WindowScreen {
 				editNameField.setX(seperator + 8);
 				editNameField.setY(y + 18);
 				editNameField.setWidth(w - (seperator - x) - 16);
-				editNameField.render(drawContext, mouseX, mouseY, client.getTickDelta());
+				editNameField.render(drawContext, mouseX, mouseY, 1.0f);
 
 				drawContext.drawTextWithShadow(textRenderer, "Value:", seperator + 8, y + 45, 0xffffff);
 
 				editValueField.setX(seperator + 8);
 				editValueField.setY(y + 57);
 				editValueField.setWidth(w - (seperator - x) - 16);
-				editValueField.render(drawContext, mouseX, mouseY, client.getTickDelta());
+				editValueField.render(drawContext, mouseX, mouseY, 1.0f);
 
 				if (!selectedEntry.equals(editNameField.getText()) && !interactions.containsKey(editNameField.getText())) {
 					MutablePair<String, String> pair = interactions.getPair(selectedEntry);

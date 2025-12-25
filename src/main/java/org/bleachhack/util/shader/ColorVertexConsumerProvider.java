@@ -5,7 +5,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gl.Framebuffer;
 import net.minecraft.client.gl.ShaderProgram;
 import net.minecraft.client.render.*;
-import net.minecraft.client.render.RenderPhase.TextureBase;
+// import net.minecraft.client.render.RenderPhase.TextureBase;
 import net.minecraft.util.Identifier;
 
 import java.util.HashMap;
@@ -15,7 +15,8 @@ import java.util.function.Supplier;
 
 public class ColorVertexConsumerProvider {
 
-	private final VertexConsumerProvider.Immediate plainDrawer = VertexConsumerProvider.immediate(new BufferBuilder(256));
+    /*
+	private final VertexConsumerProvider.Immediate plainDrawer = VertexConsumerProvider.immediate(new BufferAllocator(256));
 
 	private Supplier<ShaderProgram> shader;
 	private Function<TextureBase, RenderLayer> layerCreator;
@@ -81,23 +82,24 @@ public class ColorVertexConsumerProvider {
 		this.plainDrawer.draw();
 	}
 
-	static class ColorVertexConsumer extends FixedColorVertexConsumer {
+	static class ColorVertexConsumer implements VertexConsumer {
 		private final VertexConsumer delegate; // plainBuffer
 		private double x;
 		private double y;
 		private double z;
 		private float u;
 		private float v;
+        private int fixedRed;
+        private int fixedGreen;
+        private int fixedBlue;
+        private int fixedAlpha;
 
 		ColorVertexConsumer(VertexConsumer vertexConsumer, int i, int j, int k, int l) {
 			this.delegate = vertexConsumer;
-			super.fixedColor(i, j, k, l);
-		}
-
-		public void fixedColor(int red, int green, int blue, int alpha) {
-		}
-
-		public void unfixColor() {
+            this.fixedRed = i;
+            this.fixedGreen = j;
+            this.fixedBlue = k;
+            this.fixedAlpha = l;
 		}
 
 		public VertexConsumer vertex(double x, double y, double z) {
@@ -137,4 +139,5 @@ public class ColorVertexConsumerProvider {
 			this.delegate.vertex(this.x, this.y, this.z).color(this.fixedRed, this.fixedGreen, this.fixedBlue, this.fixedAlpha).texture(this.u, this.v).next();
 		}
 	}
+    */
 }

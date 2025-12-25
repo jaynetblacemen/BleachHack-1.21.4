@@ -117,14 +117,15 @@ public class WindowManagerScreen extends WindowScreen {
 					colorTop, colorBottom,
 					isInBounds(windowX, windowY, mouseX, mouseY) ? colorHoverFill : colorFill);
 
-			RenderSystem.getModelViewStack().push();
-			RenderSystem.getModelViewStack().scale(0.7f, 0.7f, 1f);
-
-			drawContext.drawItem(item, (int) ((bx1 + 2) / 0.7), (int) ((by1 - 6 + (by2 - by1) / 2.0) / 0.7));
-
-			RenderSystem.getModelViewStack().pop();
-			RenderSystem.applyModelViewMatrix();
-
+			/*
+			            drawContext.getMatrices().push();
+			            drawContext.getMatrices().scale(0.7f, 0.7f, 1f);
+			
+			            drawContext.drawTextWithShadow(textRenderer, "Scale: " + String.format("%.2f", w.scale),
+			                    (int) ((w.x1 + 2) * 1.43), (int) ((w.y1 - 10) * 1.43), 0xffffffff);
+			
+			            drawContext.getMatrices().pop();
+			*/
 			drawContext.drawTextWithShadow(mc.textRenderer, text, bx1 + 16, by1 + (by2 - by1) / 2 - 4, -1);
 		}
 	}

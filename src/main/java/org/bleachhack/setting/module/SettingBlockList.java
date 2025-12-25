@@ -45,17 +45,16 @@ public class SettingBlockList extends SettingList<Block> {
 		if (item == null || item.asItem() == Items.AIR) {
 			super.renderItem(mc, drawContext, item, x, y, w, h);
 		} else {
-			RenderSystem.getModelViewStack().push();
+			drawContext.getMatrices().push();
 
 			float scale = (h - 2) / 16f;
 			float offset = 1f / scale;
 
-			RenderSystem.getModelViewStack().scale(scale, scale, 1f);
+			drawContext.getMatrices().scale(scale, scale, 1f);
 
 			drawContext.drawItem(new ItemStack(item.asItem()), (int) ((x + 1) * offset), (int) ((y + 1) * offset));
 
-			RenderSystem.getModelViewStack().pop();
-			RenderSystem.applyModelViewMatrix();
+			drawContext.getMatrices().pop();
 		}
 	}
 

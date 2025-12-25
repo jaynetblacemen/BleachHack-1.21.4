@@ -61,9 +61,12 @@ public class WindowTextWidget extends WindowWidget {
 		drawContext.getMatrices().translate((windowX + x1 - offset) / scale, (windowY + y1) / scale, 0);
 		drawContext.getMatrices().multiply(RotationAxis.POSITIVE_Z.rotationDegrees(rotation));
 
-		VertexConsumerProvider.Immediate immediate = VertexConsumerProvider.immediate(Tessellator.getInstance().getBuffer());
+		/*
+		VertexConsumerProvider.Immediate immediate = VertexConsumerProvider.immediate(null);
 		mc.textRenderer.draw(text, 0, 0, color, shadow, drawContext.getMatrices().peek().getPositionMatrix(), immediate, TextRenderer.TextLayerType.NORMAL, 0, 0xf000f0);
 		immediate.draw();
+		*/
+		drawContext.drawText(mc.textRenderer, text, 0, 0, color, shadow);
 
 		if (text.getStyle() != null && mc.currentScreen != null
 				&& mouseX >= windowX + x1 - offset && mouseX <= windowX + x2 - offset && mouseY >= windowY + y1 && mouseY <= windowY + y2) {

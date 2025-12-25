@@ -1,13 +1,6 @@
-/*
- * This file is part of the BleachHack distribution (https://github.com/BleachDev/BleachHack/).
- * Copyright (c) 2021 Bleach and contributors.
- *
- * This source code is subject to the terms of the GNU General Public
- * License, version 3. If a copy of the GPL was not distributed with this
- * file, You can obtain one at: https://www.gnu.org/licenses/gpl-3.0.txt
- */
 package org.bleachhack.mixin;
 
+/*
 import java.util.Iterator;
 import java.util.Set;
 
@@ -42,16 +35,12 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.util.math.BlockPos;
 
-/**
- * Blocks are still tesselated even if they're transparent because Minecraft's
- * rendering engine is poop.
- */
 @Mixin(ChunkBuilder.BuiltChunk.RebuildTask.class)
 public class MixinChunkRebuildTask {
 
 	@Unique private static boolean OPTIFABRIC_INSTALLED = FabricLoader.getInstance().isModLoaded("optifabric");
 
-	@Shadow private /* outer */ ChunkBuilder.BuiltChunk field_20839;
+	@Shadow private ChunkBuilder.BuiltChunk field_20839;
 	@Shadow private ChunkRendererRegion region;
 
 	@Shadow private <E extends BlockEntity> void addBlockEntity(ChunkBuilder.BuiltChunk.RebuildTask.RenderData renderData, E blockEntity) {}
@@ -159,3 +148,4 @@ public class MixinChunkRebuildTask {
 		return renderData;
 	}
 }
+*/

@@ -25,7 +25,7 @@ public class WindowTextFieldWidget extends WindowWidget {
 	public void render(DrawContext drawContext, int windowX, int windowY, int mouseX, int mouseY) {
 		textField.setX(windowX + x1);
 		textField.setY(windowY + y1);
-		textField.render(drawContext, mouseX, mouseY, MinecraftClient.getInstance().getTickDelta());
+		textField.render(drawContext, mouseX, mouseY, 1.0f);
 
 		super.render(drawContext, windowX, windowY, mouseX, mouseY);
 	}

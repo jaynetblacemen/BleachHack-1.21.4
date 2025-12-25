@@ -8,7 +8,7 @@
  */
 package org.bleachhack.gui;
 
-import net.minecraft.block.enums.Instrument;
+import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.render.DiffuseLighting;
 import net.minecraft.item.ItemStack;
@@ -122,7 +122,7 @@ public class NotebotScreen extends WindowScreen {
 				drawContext.drawTextWithShadow(textRenderer, "Noteblocks: ", textX, y + 62, 0x80f080);
 
 				int c2 = 0;
-				for (Entry<Instrument, ItemStack> e : NotebotUtils.INSTRUMENT_TO_ITEM.entrySet()) {
+				for (Entry<NoteBlockInstrument, ItemStack> e : NotebotUtils.INSTRUMENT_TO_ITEM.entrySet()) {
 					int count = (int) entry.requirements.stream().filter(n -> n.instrument == e.getKey().ordinal()).count();
 
 					if (count != 0) {

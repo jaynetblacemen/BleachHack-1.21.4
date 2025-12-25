@@ -1,5 +1,6 @@
 package org.bleachhack.mixin;
 
+/*
 import net.minecraft.client.render.BufferBuilder;
 import net.minecraft.client.render.BufferVertexConsumer;
 import net.minecraft.client.render.FixedColorVertexConsumer;
@@ -8,10 +9,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-/**
- * BufferBuilder patch that allows the color to be temporarily fixed even when the VertexFormatElement isn't COLOR
- */
-@Mixin(value = BufferBuilder.class, priority = 1010 /* TODO: iris compatibility */)
+@Mixin(value = BufferBuilder.class, priority = 1010)
 public abstract class MixinBufferBuilder extends FixedColorVertexConsumer implements BufferVertexConsumer {
 
 	@Redirect(method = { "color", "vertex" }, at = @At(value = "FIELD", target = "*:Z", ordinal = 0, remap = false))
@@ -59,3 +57,4 @@ public abstract class MixinBufferBuilder extends FixedColorVertexConsumer implem
 		return colorFixed && fixedAlpha != -1 ? fixedAlpha / 255f : alpha;
 	}
 }
+*/

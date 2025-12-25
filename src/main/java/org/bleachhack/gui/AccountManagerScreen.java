@@ -41,6 +41,7 @@ import java.util.stream.IntStream;
 
 public class AccountManagerScreen extends WindowScreen {
 
+	private static final Identifier OPTIONS_BACKGROUND_TEXTURE = Identifier.of("textures/gui/options_background.png");
 	private static final String NO_UUID = "00000000-0000-0000-0000-000000000000";
 	private static final LoginCrypter crypter = new LoginCrypter(LoginCrypter.PASS_PHRASE);
 
@@ -184,11 +185,13 @@ public class AccountManagerScreen extends WindowScreen {
 			drawContext.fill(x + 2, y + 2,
 					x + height - 2, y + height - 2,
 					0x60d86ceb);
+			/*
 			drawContext.drawTexture(OPTIONS_BACKGROUND_TEXTURE,
 					x + 3, y + 3,
 					(int) (pixelSize * 8), (int) (pixelSize * 8),
 					(int) (pixelSize * 8), (int) (pixelSize * 8),
 					(int) (pixelSize * 64), (int) (pixelSize * 64));
+			*/
 		}
 
 		boolean extendText = acc.bindCape();
@@ -197,11 +200,13 @@ public class AccountManagerScreen extends WindowScreen {
 			drawContext.fill(x + height - 1, y + 2,
 					(int) (x + height + pixelSize * 10 + 1), y + height - 2,
 					0x60d86ceb);
+			/*
 			drawContext.drawTexture(OPTIONS_BACKGROUND_TEXTURE,
 					x + height, y + 3,
 					(int) Math.ceil(pixelSize), (int) Math.ceil(pixelSize),
 					(int) (pixelSize * 10), (int) (pixelSize * 16),
 					(int) (pixelSize * 64), (int) (pixelSize * 32));
+			*/
 		}
 
 		double pixelSize = ((height - 6) / 10d) * 0.625;

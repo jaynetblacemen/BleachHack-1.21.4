@@ -20,6 +20,7 @@ import net.minecraft.client.render.GameRenderer;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.Util;
 import net.minecraft.util.math.Direction.Axis;
 import net.minecraft.util.math.MathHelper;
@@ -40,6 +41,7 @@ import java.util.List;
  */
 public class EntityMenuScreen extends Screen {
 
+	private static final Identifier OPTIONS_BACKGROUND_TEXTURE = Identifier.of("textures/gui/options_background.png");
 	private LivingEntity entity;
 	private String focusedString;
 	private int crosshairX, crosshairY, focusedDot = -1;
@@ -114,12 +116,15 @@ public class EntityMenuScreen extends Screen {
 
 	public void render(DrawContext drawContext, int mouseX, int mouseY, float delta) {
 		// Draw entity
+		/*
 		RenderSystem.setShader(GameRenderer::getPositionTexProgram);
 		RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
 		RenderSystem.setShaderTexture(0, InventoryScreen.BACKGROUND_TEXTURE);
+		*/
 
 		int entitySize = (int) (120 / Boxes.getCornerLength(entity.getBoundingBox()));
 		int entityHeight = entitySize / 2 - (int) (10 / Boxes.getAxisLength(entity.getBoundingBox(), Axis.Y));
+		/*
 		InventoryScreen.drawEntity(drawContext,
 				(width - entitySize) / 2, (height - entitySize) / 2,
 				(width + entitySize) / 2 + entitySize, (height + entitySize) / 2 + entitySize,
@@ -128,6 +133,7 @@ public class EntityMenuScreen extends Screen {
 				(float) (height / 2 + entityHeight - 45) - mouseY,
 				entity
 		);
+		*/
 
 		// Fake crosshair
 		RenderSystem.setShaderTexture(0, 0);
@@ -135,7 +141,7 @@ public class EntityMenuScreen extends Screen {
 		RenderSystem.blendFuncSeparate(
 				GlStateManager.SrcFactor.ONE_MINUS_DST_COLOR, GlStateManager.DstFactor.ONE_MINUS_SRC_COLOR,
 				GlStateManager.SrcFactor.ONE, GlStateManager.DstFactor.ZERO);
-		drawContext.drawTexture(OPTIONS_BACKGROUND_TEXTURE, crosshairX - 8, crosshairY - 8, 0, 0, 15, 15);
+		// drawContext.drawTexture(OPTIONS_BACKGROUND_TEXTURE, crosshairX - 8, crosshairY - 8, 0, 0, 15, 15);
 
 		drawDots(drawContext, (int) (Math.min(height, width) / 2 * 0.75), mouseX, mouseY);
 

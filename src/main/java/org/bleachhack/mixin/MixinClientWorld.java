@@ -64,6 +64,10 @@ public class MixinClientWorld {
 		}
 	}
 
+	/**
+	 * @author Bleach
+	 * @reason Custom sky properties
+	 */
 	@Overwrite
 	public DimensionEffects getDimensionEffects() {
 		if (MinecraftClient.getInstance().world == null) {

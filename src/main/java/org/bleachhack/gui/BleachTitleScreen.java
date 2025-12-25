@@ -105,12 +105,15 @@ public class BleachTitleScreen extends WindowScreen {
 				.withRenderEvent((widget, ms, wx, wy) -> {
 					MutableText bhText = Text.literal("");
 
+					/*
 					int i = 0;
 					for (char c: "BleachHack".toCharArray()) {
 						int fi = i++;
 						bhText.append(
 								Text.literal(String.valueOf(c)).styled(s -> s.withColor(TextColor.fromRgb(UI.getRainbowFromSettings(fi)))));
 					}
+					*/
+					bhText.append(Text.literal("BleachHack"));
 
 					((WindowTextWidget) widget).setText(bhText);
 				}));

@@ -42,9 +42,12 @@ public class SettingColor extends ModuleSetting<float[]> {
 
 		RenderSystem.enableBlend();
 		RenderSystem.defaultBlendFunc();
+		/*
 		RenderSystem.setShader(GameRenderer::getPositionColorProgram);
+		*/
 
 		// Color square
+		/*
 		Tessellator tessellator = Tessellator.getInstance();
 		BufferBuilder bufferBuilder = Tessellator.getInstance().getBuffer();
 		bufferBuilder.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION_COLOR);
@@ -57,7 +60,8 @@ public class SettingColor extends ModuleSetting<float[]> {
 		bufferBuilder.vertex(sx, sy, 0).color(0, 0, 0, 0).next();
 		bufferBuilder.vertex(sx, ey, 0).color(0, 0, 0, 255).next();
 		bufferBuilder.vertex(ex, ey, 0).color(0, 0, 0, 255).next();
-		tessellator.draw();
+		// tessellator.draw();
+		*/
 
 		RenderSystem.disableBlend();
 

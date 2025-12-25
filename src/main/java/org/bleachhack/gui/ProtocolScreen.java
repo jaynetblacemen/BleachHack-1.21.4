@@ -40,6 +40,7 @@ public class ProtocolScreen extends Screen {
 		super.init();
 
 		addButton = addDrawableChild(ButtonWidget.builder(Text.literal("Done"), button -> {
+			/*
 			int i = Integer.parseInt(protocolField.getText());
 			int i1 = Integer.parseInt(packVerField.getText());
 
@@ -48,6 +49,7 @@ public class ProtocolScreen extends Screen {
 			// version.releaseTarget = versionField.getText();
 			version.protocolVersion =  i;
 			version.dataPackVersion = i1;
+			*/
 			BRAND = brandField.getText();
 
 			close();
